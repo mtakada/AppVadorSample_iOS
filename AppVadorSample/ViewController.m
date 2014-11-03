@@ -27,7 +27,6 @@
 
 - (void)readyToPlay:(AvAdView *)avadview {
     NSLog(@"ready to play ad");
-    adView.frame = CGRectMake(0, 20, 160, 90);
     [avadview play];
 }
 

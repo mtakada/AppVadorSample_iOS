@@ -3,7 +3,7 @@ AppVador Native SDK
 
 ## SDKの取得
 
-本プロジェクト内のAppVador.frameworkを対象プロジェクトに追加ください。
+本プロジェクト内のAppVadorNative.frameworkを対象プロジェクトに追加ください。
 
 ## Frameworkのインポート
 
@@ -21,14 +21,14 @@ AppVador Native SDK
 
 ヘッダに下記を追加ください。
 
-#import <AppVador/ApvAdVideoView.h>
+#import <AppVadorNative/AvAdView.h>
 
-また、広告の読込完了等の通知にApvAdVideoViewDelegateを利用します。
+また、広告の読込完了等の通知にAvAdViewDelegateを利用します。
 
 例：テーブルビューコントローラーの場合
 
-@interface ViewController : UITableViewController<ApvAdVideoViewDelegate> {
-ApvAdVideoView *avAdView;
+@interface ViewController : UITableViewController<AvAdViewDelegate> {
+    AvAdView *avAdView;
 }
 
 ### Viewの初期化
@@ -36,32 +36,31 @@ ApvAdVideoView *avAdView;
 Viewを初期化します。
 initメソッドの引数は広告枠IDとなり、本番環境と開発環境で別になります。
 
-adView = [[ApvAdVideoView alloc] init:@"06d30ba01ff1dd95ad1e75a5f1b50124"];
+adView = [[AvAdView alloc] init:320 height:180];
+adView.appId = @"06d30ba01ff1dd95ad1e75a5f1b50124";
 adView.delegate = self;
 
 ### 動画広告の読込
 
-初期化したApvAdVideoViewのpreloadメソッドを実行すると動画広告が読み込まれます。
+初期化したAvAdViewのpreloadメソッドを実行すると動画広告が読み込まれます。
 
 [adView preload];
 
 読込が完了すると、delegateからapvAdDidFinishedLoadが呼ばれます。
 このdelegateメソッド内でplayメソッドを実行することで動画広告の再生が始まります。
 
-- (void) apvAdDidFinishedLoad:(ApvAdVideoView *)adView
-{
-[adView play];
+- (void) readyToPlay:(AvAdView *)adView {
+    [adView play];
 }
 
 規定ではユーザーから見えている範囲内（Viewable area）での再生開始となりますが任意のタイミングで実行可能です。
-
 再生範囲外に出た場合などは[adView pause]メソッドを実行し動画広告の再生を停止してください。
 
 また、このタイミングで読み込みに失敗するとapvDidFailedToReceiveAdメソッドが呼ばれます。
 広告表示領域の削除などにご利用ください。
 
 
-## ApvAdVideoView
+## AvAdView
 
 下記のメソッドを持ちます。
 
