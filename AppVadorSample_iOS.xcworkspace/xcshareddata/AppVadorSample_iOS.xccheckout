@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5856AB98-9B42-40DD-8521-8FADD087FB3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AppVadorSample_iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>345662D3FE09DA30C0D4108D0D856B01E914FDD6</key>
+		<string>github.com:appvador/AppVadorSample_iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AppVadorSample_iOS.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>345662D3FE09DA30C0D4108D0D856B01E914FDD6</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:appvador/AppVadorSample_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>345662D3FE09DA30C0D4108D0D856B01E914FDD6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>345662D3FE09DA30C0D4108D0D856B01E914FDD6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AppVadorSample_iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

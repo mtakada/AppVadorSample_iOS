@@ -21,7 +21,7 @@ AppVador SDK
 - AvFoundation
 - CoreMedia
 
-## プレミアムビデオアドの実装
+## モバイルビデオアドの実装
 
 ### SDKのインポート
 
