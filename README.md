@@ -1,9 +1,15 @@
-AppVador Native SDK
+AppVador SDK
 ===================
 
-## SDKの取得
+## はじめに
 
-本プロジェクト内のAppVadorNative.frameworkを対象プロジェクトに追加ください。
+管理画面より最新のAppVador.frameworkをダウンロードし、対象プロジェクトに追加ください。
+テスト用の広告IDは下記の通りです。
+
+    06d30ba01ff1dd95ad1e75a5f1b50124
+
+また、本番環境用にビルドする際は必ず管理画面から取得した広告枠IDに変更ください。
+*テスト用IDのまま公開された場合、収益は一切発生しません！*
 
 ## Frameworkのインポート
 
@@ -21,49 +27,79 @@ AppVador Native SDK
 
 ヘッダに下記を追加ください。
 
-#import <AppVadorNative/AvAdView.h>
+    #import <AppVador/AvAdView.h>
+
+
+実装はdidFinishLaunchingWithOptionsやviewDidLoadなどの箇所に実装してください。
+
+    - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+    - (void)viewDidLoad;
 
 また、広告の読込完了等の通知にAvAdViewDelegateを利用します。
 
 例：テーブルビューコントローラーの場合
 
-@interface ViewController : UITableViewController<AvAdViewDelegate> {
-    AvAdView *avAdView;
-}
+    @interface ViewController : UITableViewController<AvAdViewDelegate> {
+        AvAdView *avAdView;
+    }
 
 ### Viewの初期化
 
 Viewを初期化します。
-initメソッドの引数は広告枠IDとなり、本番環境と開発環境で別になります。
+initメソッドの第2引数は広告枠IDとなり、本番環境と開発環境で別になります。
+本番リリースにあたっては*必ず見直してください*。
 
-adView = [[AvAdView alloc] init:320 height:180];
-adView.appId = @"06d30ba01ff1dd95ad1e75a5f1b50124";
-adView.delegate = self;
+    //モバイルビデオアド
+    AvAdView *adView = [[AvAdView alloc] initWithFrame:CGRectMake(0, 194, 320, 180)
+                               applicationId:@"広告枠ID"];
+    adView.delegate = self;
+    adView.rootViewController = self;
+
+広告枠のサイズはアスペクト比16:9を基準としています。
+配信される動画のほとんどがこのアスペクト比で制作されているため、比率の違う広告枠の場合は上下または左右に黒い帯が付加されます。
+最低サイズの縦300ピクセル x 横168ピクセルより大きければサイズは自由に設定頂いて問題ございません。
 
 ### 動画広告の読込
 
 初期化したAvAdViewのpreloadメソッドを実行すると動画広告が読み込まれます。
 
-[adView preload];
+    [adView adStart];
 
-読込が完了すると、delegateからapvAdDidFinishedLoadが呼ばれます。
-このdelegateメソッド内でplayメソッドを実行することで動画広告の再生が始まります。
-
-- (void) readyToPlay:(AvAdView *)adView {
-    [adView play];
-}
-
-規定ではユーザーから見えている範囲内（Viewable area）での再生開始となりますが任意のタイミングで実行可能です。
-再生範囲外に出た場合などは[adView pause]メソッドを実行し動画広告の再生を停止してください。
-
-また、このタイミングで読み込みに失敗するとapvDidFailedToReceiveAdメソッドが呼ばれます。
-広告表示領域の削除などにご利用ください。
+広告枠の50%がスクリーンに表示されている場合に再生が開始します。
+これよりも広告枠の表示領域が小さい場合にはビデオの再生は停止します。
+アプリケーションの実装方法により、この表示領域検知が誤作動する場合がございます。
+その場合にはサポートまでお問い合わせください。
 
 
-## AvAdView
+### 広告の読み込み失敗、成功状況の取得
 
-下記のメソッドを持ちます。
+AvAdViewDelegateには、広告の読込失敗などを通知する機能があります。
 
-- (void)preload // 渡されたIDに該当する動画広告を読み込みます。
-- (void)play // 再生を開始します。preloadの読み込みが完了していない場合何も起きません。
-- (void)pause // 再生を停止します。
+    @interface AppVadorSample : UIViewController <AvAdViewDelegate>
+
+    -(void)avAdDidOpenFullMovieView:(AvAdView*)avadview {
+        // 動画の全画面再生が開始した際に呼ばれます。
+        // 動画の音声が流れますので、BGMのあるアプリケーションではここでBGMのストップ処理をしてください。
+    }
+
+    -(void)avAdDidCloseFullMovieView:(AvAdView*)avadview {
+        // 動画の全画面再生が終了した際に呼ばれます。
+        // BGMのあるアプリケーションではここでBGMの再開処理をしてください。
+    }
+
+    -(void)avAdDidFinishedLoad:(AvAdView*)avadview {
+        //広告の読み込み完了時に呼ばれます。
+    }
+
+    -(void)avAdDidFailToReceiveAd:(AvAdView*)avadview {
+        // 広告の読込失敗時に呼ばれます。
+        // 配信サーバーの停止時や広告在庫切れの際にも呼ばれます。
+        // ここで広告枠の削除処理をしてください。
+
+        if (avadview) {
+            avadview.hidden = YES;
+            [avadview remove];
+            avadview = nil;
+        }
+    }
+

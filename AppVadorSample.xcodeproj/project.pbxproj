@@ -20,7 +20,7 @@
 		311C60DD1A00EE4F00FB5286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311C60DC1A00EE4F00FB5286 /* AVFoundation.framework */; };
 		311C60DF1A00EE5E00FB5286 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311C60DE1A00EE5E00FB5286 /* CoreMedia.framework */; };
 		311C60E11A00EEEF00FB5286 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 311C60E01A00EEEF00FB5286 /* README.md */; };
-		31D7E9F21A2E0A0C009CBF76 /* AppVador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D7E9F11A2E0A0C009CBF76 /* AppVador.framework */; };
+		31D7E9F91A2E1A16009CBF76 /* AppVador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D7E9F11A2E0A0C009CBF76 /* AppVador.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31D7E9F21A2E0A0C009CBF76 /* AppVador.framework in Frameworks */,
+				31D7E9F91A2E1A16009CBF76 /* AppVador.framework in Frameworks */,
 				311C60DF1A00EE5E00FB5286 /* CoreMedia.framework in Frameworks */,
 				311C60DD1A00EE4F00FB5286 /* AVFoundation.framework in Frameworks */,
 				311C60DB1A00EE4400FB5286 /* AdSupport.framework in Frameworks */,
