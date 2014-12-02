@@ -61,7 +61,7 @@ initメソッドの第2引数は広告枠IDとなり、本番環境と開発環�
 
 ### 動画広告の読込
 
-初期化したAvAdViewのpreloadメソッドを実行すると動画広告が読み込まれます。
+初期化したAvAdViewのadStartメソッドを実行すると動画広告が読み込まれます。
 
     [adView adStart];
 

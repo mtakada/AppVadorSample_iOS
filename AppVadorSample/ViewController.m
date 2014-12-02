@@ -19,6 +19,9 @@
 
     adView = [[AvAdView alloc] initWithFrame:CGRectMake(0, 194, 320, 180)
                                applicationId:@"06d30ba01ff1dd95ad1e75a5f1b50124"];
+//    adView = [[AvAdView alloc] initWithFrame:CGRectMake(0, 194, 320, 180)
+//                               applicationId:@"7a889aed640302a9f8f155be072b7dba"];
+
     adView.delegate = self;
     adView.rootViewController = self;
     [adView adStart];
