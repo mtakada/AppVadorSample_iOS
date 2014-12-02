@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AppVadorNative/AvAdView.h>
+#import <AppVador/AvAdView.h>
 
 @interface ViewController : UIViewController<AvAdViewDelegate> {
     AvAdView *adView;

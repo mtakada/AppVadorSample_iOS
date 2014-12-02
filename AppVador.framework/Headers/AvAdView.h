@@ -20,6 +20,12 @@ extern const float kBannerHeight;
 extern const float kIconWidth;
 extern const float kIconHeight;
 
+extern NSString* const KEY_OF_START;
+extern NSString* const KEY_OF_FIRST_QUARTILE;
+extern NSString* const KEY_OF_MIDPOINT;
+extern NSString* const KEY_OF_THIRD_QUARTILE;
+extern NSString* const KEY_OF_COMPLETE;
+
 @property (nonatomic) UIViewController * rootViewController;
 
 @property (nonatomic) NSString *appId;

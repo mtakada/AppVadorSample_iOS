@@ -17,38 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    adView = [[AvAdView alloc] init:320 height:180];
-    adView.appId = @"06d30ba01ff1dd95ad1e75a5f1b50124";
+    adView = [[AvAdView alloc] initWithFrame:CGRectMake(0, 194, 320, 180) applicationId:@"06d30ba01ff1dd95ad1e75a5f1b50124"];
     adView.delegate = self;
-    [adView preload];
+    adView.rootViewController = self;
+    [adView adStart];
     
     [self.view addSubview:adView];
 }
 
-- (void)readyToPlay:(AvAdView *)avadview {
-    NSLog(@"ready to play ad");
-    [avadview play];
+-(void)avAdDidFailToReceiveAd:(AvAdView *)avadview {
+    NSLog(@"広告の取得に失敗しました。または広告在庫がありません。");
 }
 
-- (void)didFailedToReceiveAd:(AvAdView *)avadview {
-    NSLog(@"failed to receive ad");
-    NSLog(@"%@", avadview.message);
+-(void)avAdDidOpenFullMovieView:(AvAdView *)avadview {
+    NSLog(@"フルサイズビデオを開きました。");
 }
 
-- (void)didTapCloseButton:(AvAdView *)avadview {
-    NSLog(@"tapped close button");
-}
-
-- (void)didFailedToPlayMovie:(AvAdView *)avadview {
-    NSLog(@"failed to play fullsize movie when tapped adview");
-}
-
-- (void)didCompletePlayMovie:(AvAdView *)avadview {
-    NSLog(@"completed fullsize movie");
-}
-
-- (void)didReplay:(AvAdView *)avadview {
-    NSLog(@"did replay inline movie");
+-(void)avAdDidCloseFullMovieView:(AvAdView *)avadview {
+    NSLog(@"フルサイズビデオを閉じました。");
 }
 
 - (void)didReceiveMemoryWarning {

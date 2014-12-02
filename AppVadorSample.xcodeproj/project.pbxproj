@@ -20,7 +20,7 @@
 		311C60DD1A00EE4F00FB5286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311C60DC1A00EE4F00FB5286 /* AVFoundation.framework */; };
 		311C60DF1A00EE5E00FB5286 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311C60DE1A00EE5E00FB5286 /* CoreMedia.framework */; };
 		311C60E11A00EEEF00FB5286 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 311C60E01A00EEEF00FB5286 /* README.md */; };
-		311C60FB1A07469200FB5286 /* AppVadorNative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311C60D61A00EE2F00FB5286 /* AppVadorNative.framework */; };
+		31D7E9F21A2E0A0C009CBF76 /* AppVador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D7E9F11A2E0A0C009CBF76 /* AppVador.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +48,12 @@
 		311C60C51A00E52300FB5286 /* AppVadorSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppVadorSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		311C60CA1A00E52300FB5286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		311C60CB1A00E52300FB5286 /* AppVadorSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppVadorSampleTests.m; sourceTree = "<group>"; };
-		311C60D61A00EE2F00FB5286 /* AppVadorNative.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppVadorNative.framework; sourceTree = "<group>"; };
 		311C60D81A00EE3C00FB5286 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		311C60DA1A00EE4400FB5286 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		311C60DC1A00EE4F00FB5286 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		311C60DE1A00EE5E00FB5286 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		311C60E01A00EEEF00FB5286 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		31D7E9F11A2E0A0C009CBF76 /* AppVador.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppVador.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				311C60FB1A07469200FB5286 /* AppVadorNative.framework in Frameworks */,
+				31D7E9F21A2E0A0C009CBF76 /* AppVador.framework in Frameworks */,
 				311C60DF1A00EE5E00FB5286 /* CoreMedia.framework in Frameworks */,
 				311C60DD1A00EE4F00FB5286 /* AVFoundation.framework in Frameworks */,
 				311C60DB1A00EE4400FB5286 /* AdSupport.framework in Frameworks */,
@@ -82,12 +82,12 @@
 		311C60A01A00E52300FB5286 = {
 			isa = PBXGroup;
 			children = (
+				31D7E9F11A2E0A0C009CBF76 /* AppVador.framework */,
 				311C60E01A00EEEF00FB5286 /* README.md */,
 				311C60DE1A00EE5E00FB5286 /* CoreMedia.framework */,
 				311C60DC1A00EE4F00FB5286 /* AVFoundation.framework */,
 				311C60DA1A00EE4400FB5286 /* AdSupport.framework */,
 				311C60D81A00EE3C00FB5286 /* CoreTelephony.framework */,
-				311C60D61A00EE2F00FB5286 /* AppVadorNative.framework */,
 				311C60AB1A00E52300FB5286 /* AppVadorSample */,
 				311C60C81A00E52300FB5286 /* AppVadorSampleTests */,
 				311C60AA1A00E52300FB5286 /* Products */,
