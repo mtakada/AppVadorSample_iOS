@@ -91,6 +91,10 @@ AvAdViewDelegateには、広告の読込失敗などを通知する機能があ�
         //広告の読み込み完了時に呼ばれます。
     }
 
+    -(void)avAdDidCompleteMovie:(AvAdView*)avadview {
+        //動画の再生完了時に呼ばれます。
+    }
+
     -(void)avAdDidFailToReceiveAd:(AvAdView*)avadview {
         // 広告の読込失敗時に呼ばれます。
         // 配信サーバーの停止時や広告在庫切れの際にも呼ばれます。
