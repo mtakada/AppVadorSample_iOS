@@ -59,6 +59,9 @@ extern NSString* const KEY_OF_COMPLETE;
 //広告の読み込みに成功の際に呼ばれます。
 -(void)avAdDidFinishedLoad:(AvAdView*)avadview;
 
+// 広告の再生が完了した際に呼ばれます。
+- (void)avAdDidCompleteMovie:(AvAdView*)avadview;
+
 //実装は必須ではありませんが、広告が取得出来なかった際にアドネットワークなどの利用をお勧めします。
 -(void)avAdDidFailToReceiveAd:(AvAdView*)avadview;
 
